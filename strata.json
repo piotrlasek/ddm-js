@@ -1,0 +1,18 @@
+{
+    "picube" : "New York Taxi Cab",  /* TODO: ??? */
+    "tuples" : 4,                    /* TODO: ??? */
+    "axis-xy": [
+        {"id": "0", "x": "0", "y": "0", "value": "0"},
+        {"id": "1", "x": "1", "y": "0", "value": "1"},
+        {"id": "2", "x": "0", "y": "1", "value": "1"},
+        {"id": "3", "x": "1", "y": "1", "value": "2"}
+    ],
+    "data": [
+        /* {coordinates}, {value(s)} */
+        {"coordinates": [0, 0, 0], "values": [1, 2]},
+        {"coordinates": [1, 0, 1], "values": [2, 5]},
+        {"coordinates": [0, 1, 0], "values": [4, 2]},
+        {"coordinates": [1, 1, 1], "values": [3, 1]},
+        {"coordinates": [1, 1, 1], "values": [3, 1]}
+    ]
+}

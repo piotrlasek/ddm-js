@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="js/dmm.v0.js"></script>
+    <script src="js/jquery-3.1.1.min.js"></script>
+    <meta charset="UTF-8">
+    <title>Data Matrix Manager Demo</title>
+</head>
+
+<body>
+
+    <h1>Data Matrix Manager Demo</h1>
+
+    <script>
+
+        /**
+         * Custom function for processing data.
+         * @param data
+         */
+        function processData(data) {
+            console.log("processData");
+
+            var tuplesXY = data["axis-xy"];
+
+            for(var i = 0; i < tuplesXY.length; i++) {
+                var t = tuplesXY[i];
+                console.log(t["id"] + ": " + t["x"] + ", " +
+                        t["y"] + ", " + t["value"]);
+            }
+        }
+
+        /* ******************************************************* */
+
+        var dmm = new DMM("http://localhost/"); // TODO: Come up with a better way of creating an instance of DMM.
+
+        var xyAxis = dmm.getAxes()[0];
+        var uvAxis = dmm.getAxes()[1]
+        var tAxis = dmm.getAxes()[2];
+
+        // var xyBB = new BoundingBox(axis, strata, min, max);
+        var xyBB = new BoundingBox(xyAxis, 1, [0,0], [200,400]);
+        var uvBB = new BoundingBox(uvAxis, 2, [10,20], [20,30]);
+        var uvBB = new BoundingBox(tAxis, 3, [0], [31]);
+
+        //
+
+        var bBoxes = [xyBB, uvBB, tBB];
+
+        var data = dmm.getData(bBoxes, processData); /* processData is a callback function defined above. */
+
+    </script>
+
+</body>
+
+</html>

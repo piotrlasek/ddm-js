@@ -1,0 +1,53 @@
+{
+    "name" : "New York Taxi Cab Pi-Cube",
+    /* "layers": TODO: ??? */
+    "axes" : [
+     {
+        "name": "axis-xy",
+        "description": "Pickup positions",
+        "attributes": [
+            {
+                "name": "x",
+                "type": "integer",
+                "min": "0",
+                "max": "1000"
+            },
+            {
+                "name": "y",
+                "type": "integer",
+                "min": "0",
+                "max": "1000"
+            }
+        ]
+    },
+    {
+        "name": "axis-uv",
+        "description": "Drop-off positions",
+        "attributes": [
+            {
+                "name": "x",
+                "type": "integer",
+                "min": "0",
+                "max": "1000"
+            },
+            {
+                "name": "y",
+                "type": "integer",
+                "min": "0",
+                "max": "1000"
+            }
+        ]
+    },
+    {
+        "name": "axis-t",
+        "description": "Times of trips",
+        "attributes": [
+            {
+                "name": "t",
+                "type": "float",
+                "min": "0",
+                "max": "365"
+            }
+        ]
+    }
+}
